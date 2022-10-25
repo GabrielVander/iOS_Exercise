@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ResultViewController: UIViewController {
 
@@ -13,8 +14,15 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let randomBool: Bool = arc4random_uniform(2) == 0
+        var imageAssetName: String = "coin_heads"
+        
+        if (randomBool) {
+            imageAssetName = "coin_tails"
+        }
 
-        resultCoinDisplay.image = UIImage(named: "coin_heads")
+        resultCoinDisplay.image = UIImage(named: imageAssetName)
     }
     
 
