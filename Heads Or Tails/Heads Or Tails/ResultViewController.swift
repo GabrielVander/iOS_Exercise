@@ -12,17 +12,23 @@ class ResultViewController: UIViewController {
 
     @IBOutlet weak var resultCoinDisplay: UIImageView!
     
+    @IBOutlet weak var coinNameLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let randomBool: Bool = arc4random_uniform(2) == 0
         var imageAssetName: String = "coin_heads"
+        var coinName: String = "Heads"
         
         if (randomBool) {
             imageAssetName = "coin_tails"
+            coinName = "Tails"
         }
 
         resultCoinDisplay.image = UIImage(named: imageAssetName)
+        coinNameLabel.text = coinName
     }
     
 
